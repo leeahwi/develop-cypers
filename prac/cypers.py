@@ -422,11 +422,19 @@ class cypers_searcher:
     time_count = most_time[0][0] + '시'
 
     position_list = Counter(position_list).most_common(4)
+    
+    try:
+      win_count = Counter(match_result_list).get('win')
+      lose_count = Counter(match_result_list).get('lose')
 
-    win_count = Counter(match_result_list).get('win')
-    lose_count = Counter(match_result_list).get('lose')
-
-    win_persent = str(round(win_count/(win_count+lose_count) * 100,2)) + '%'
+      if lose_count == None:
+        win_persent = '100%'
+      elif win_count == None:
+        win_persent = '0%'
+      else:
+        win_persent = str(round(win_count/(win_count+lose_count) * 100,2)) + '%'
+    except:
+      await self.ctx.send('전적이 존재하지 않거나 오류입니다.')
 
     party_count = str(Counter(party_count_list).most_common(1)[0][0]) + '명'
     
