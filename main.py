@@ -23,9 +23,6 @@ from collections import Counter
 
 #TOKEN = os.environ['BOT_TOKEN']
 
-TOKEN = 'NjcwMTg5OTUxNTM0NjI4ODc0.Xiqx_g.C6DRYXooSU-9LnO6aqMhij4WZe8'
-
-cyp_TOKEN = 'APT44IBr1OAav1OhkKRnjXUSrO3osJNz'
 
 client = commands.Bot(command_prefix="?")
 

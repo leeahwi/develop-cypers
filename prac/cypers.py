@@ -423,7 +423,10 @@ class cypers_searcher:
 
     position_list = Counter(position_list).most_common(4)
 
-    win_persent = str(round((Counter(match_result_list).get('win')/ Counter(match_result_list).get('lose')) * 100,2)) + '%'
+    win_count = Counter(match_result_list).get('win')
+    lose_count = Counter(match_result_list).get('lose')
+
+    win_persent = str(round(win_count/(win_count+lose_count) * 100,2)) + '%'
 
     party_count = str(Counter(party_count_list).most_common(1)[0][0]) + '명'
     
