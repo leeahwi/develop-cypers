@@ -308,7 +308,8 @@ class cypers_searcher:
             raise IndexError
               
           if resp.status == 200:
-            print("done")
+            pass
+            #print("done")
 
           temp_dict = await resp.text()
 
